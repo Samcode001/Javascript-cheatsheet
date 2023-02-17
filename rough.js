@@ -205,8 +205,8 @@
 // console.log(myObj);
 // console.log(myObj.game());
 // for(let key in myObj){
-//       // console.log(key);
-//       // console.log(myObj[key]);
+//       console.log(key);
+//       console.log(myObj[key]);
 // }
 
 
@@ -220,7 +220,7 @@
 // // Array.from(b).forEach(function(element,index,array){
 // //       console.log(element,index,array);
 // // })
-// // console.log(b);
+// console.log(b);
 
 
 // ----------------******* HTML Element Selector ******--------------------
@@ -250,7 +250,7 @@
 //   MutliElement Selectors
 
 
-// let element=document.getElementsByClassName("container");
+// let element=document.getElementsByClassName("container"); // gives all the element of class
 // let select=document.getElementsByClassName("child");
 // console.log(element);
 // console.log(select);
@@ -258,7 +258,7 @@
 //       console.log(element);
 // })
 
-// console.log(element[0].getElementsByClassName("child"));
+// console.log(element[0].getElementsByClassName("child")); // For Selecting first class
 
 
 
@@ -283,7 +283,6 @@
 // console.log(cont.lastElementChild);
 
 
-
 // ----------------******** Creating,Removing&Replacing elements***********----------------
 
 // let elem=document.createElement("li");
@@ -292,42 +291,44 @@
 // elem.setAttribute("tittle","mytittle");
 // elem.innertext="Hello This is Sam";
 // elem.innerHTML="<p>Hello</p>";
-// // console.log(elem);
+// console.log(elem);
 
 // let cont=document.querySelector(".this");
 // cont.appendChild(elem);
 // // console.log(cont);
 
-// let elem2=document.createElement("h2");
+// let elem2=document.createElement("h2"); // creates any element
 // elem2.className="childul";
 // elem2.id="id";
 
-// let tnode=document.createTextNode("Hello im Tnode");
+// let tnode=document.createTextNode("Hello im Tnode"); // write anything inside the element that u created
 // elem2.appendChild(tnode);
 // console.log(elem2);
 // elem.replaceWith(elem2);  // replaces the element
+// console.log(elem);
 
 
 // --------------*********Events & Events_Object*******--------------------
 
 // document.querySelector(".head").addEventListener("click",function(){
-//     // console.log("Clicked");
+//     console.log("Clicked");
 //     let elem=document.querySelector(".head");
 //     elem.innerHTML="<h1> Hello</h1>"
 // })
 // document.querySelector(".no").addEventListener("click",function(e){
 //     let variable=e.target;
-//     // variable=e.target.className;
+//     variable=e.target.className;
 //     // variable=e.target.id;
 //     variable=Array.from(e.target.classList);
 //    console.log(variable);
-// //    console.log(Array.from(e));
+//    console.log(Array.from(e));
 // })
 
 // let btn=document.querySelector("#btn");
+// console.log(btn)
 // btn.addEventListener("click",func1);
 // btn.addEventListener("dblclick",func2);
-// btn.addEventListener("mousedown",func3);
+// btn.addEventListener("mousedown",func3);// is fired the moment the mouse button is initially pressed
 // btn.addEventListener("mouseenter",func4);
 // btn.addEventListener("mouseleave",func5);
 
@@ -352,17 +353,19 @@
 
 // localStorage.setItem("Name","Harry");
 // localStorage.setItem("Name2","Sam");
-// // localStorage.removeItem("Name");
-// // localStorage.clear();
-// console.log(window.localStorage.Name);
+// localStorage.removeItem("Name"); // Clear the particular data that u specify.
+// localStorage.clear();        // cLear All the data of the local storage 
+// console.log(localStorage.Name2);
 
 // let vr=localStorage.getItem("Name");
 //  vr=localStorage.getItem("Name2");
 // console.log(vr);
 
 // let arr=["Hello","Good","Morning"];
-// localStorage.setItem("sabzi",JSON.stringify(arr));
-// console.log(JSON.parse(window.localStorage.sabzi));
+// localStorage.setItem("sabzi",arr); // This is will set the localstorage as string i.we the array will changed into a string
+// console.log(JSON.parse(window.localStorage.sabzi)); // If we retrive this data we simply get the string 
+// localStorage.setItem("sabzi2",JSON.stringify(arr)); // In this form we actually set the variable as array
+// console.log(JSON.parse(window.localStorage.sabzi2)); // in retriving we actually get the array
 
 
 // sessionStorage.setItem("Name","sam");
