@@ -405,6 +405,7 @@
 // console.log(d);
 
 // otherDate.setDate(24); // We can Also set above all the functions
+// otherDate.setSeconds(24); 
 // console.log(otherDate);
 
 
@@ -412,7 +413,7 @@
 
 // // Normal Object
 // let car={
-//     Name:"Kia",
+//     Name:"kia",
 //     topSpeed:140,
 //     color: function(colour){
 //         return(`Your car color is ${colour}`);
@@ -421,20 +422,20 @@
 //         return(car);
 //     }
 // };
-// // console.log(car);
+// console.log(car);
 
 // //  Constructor
 
 // function General(givenName,givenSpeed){
 //       this.name1=givenName;
 //       this.speed=givenSpeed;
-//     // console.log(name1,givenSpeed);
-//     this.car=function(){
-//         return(`${this.name1} is Runnig with Topspeed of ${this.speed}`);
-//     };
-//     this.compare=function(){
-//         return(`${this.name1} car is slower from ${car2.name} by ${car2.this.speed-car1.this,speed} `);
-//     };
+//     console.log(name1,givenSpeed);
+//     // this.car=function(){
+//     //     return(`${this.name1} is Runnig with Topspeed of ${this.speed}`);
+//     // };
+//     // this.compare=function(){
+//     //     return(`${this.name1} car is slower from ${car2.name1} by ${car2.this.speed-car1.this,speed} `);
+//     // };
 // };
 
 // car1=new General("Nissan","190");
@@ -452,11 +453,11 @@
 // };
 // console.log(Obj);
 
-// function Name(givenName,givenAge){
+// function Name(givenName,givenAge){  // This Constructor is working as a prototype of object Obj2
 //     this.Name=givenName;
 //     this.age=givenAge;
 // }
-// let Obj2=new Name("Hima",20);
+// let Obj2=new Name("Hima",20); // Taking the prototype from above constructor
 // console.log(Obj2);
 
 // function Game(gameName,givenPrice){
@@ -469,6 +470,7 @@
 
 // let gameObj=new Game("Contra",300);
 // console.log(gameObj);
+// console.log(gameObj.solitude());
 // let gameObj2= new Game("Nissan",200);
 // console.log(gameObj2);
 
@@ -483,6 +485,7 @@
 //     },
 //     changeName: function (name) {
 //         this.name = name;
+//         return this.name;
 //     }
 // }
 
@@ -491,6 +494,9 @@
 // sam.name = "Hulk";
 // sam.role = "powerful";
 // console.log(sam);
+// console.log(sam.slogan()); // it retrun undefined beacause nothing is return
+// console.log(sam.feature());
+// console.log(sam.changeName('shila'),sam);
 
 // //Another method of creating Object
 // let lame = Object.create(proto, {
@@ -528,7 +534,7 @@
 
 
 // class Employee{
-//     constructor(givenName,givenExperience,givenDesignation){
+//     constructor(givenName,givenExperience,givenDesignation){ // This is the constructor of ES6 Classes
 //         this.name=givenName;
 //         this.Experience=givenExperience;
 //         this.Designation=givenDesignation;
@@ -536,15 +542,15 @@
 //     slogan=function(){
 //         return `${this.name}'s company is Best `
 //     }
-//   static add(a,b){
+//   static add(a,b){ // static means we can access this function but not inciule in prototype
 //       return a+b;
 //   }
 // }
 
-// After extends The prototype of progremmer will be Employee
+// // After extends The prototype of progremmer will be Employee
 // class Programmer extends Employee{
 //     constructor(givenName,givenExperience,givenDesignation,language,github){
-//         super(givenName,givenExperience,givenDesignation);//Most Important Thing
+//         super(givenName,givenExperience,givenDesignation);//Most Important Thing, It retrive the parameter from employee class
 //         this.language=language;
 //         this.github=github;
 //     }
@@ -554,9 +560,9 @@
 //     }
 // }
 
-// let Obj=new Programmer("Sam",4,"Programmer","javascript",420993);
+// let Obj=new Programmer("Sam",4,"Programmer","javascript",420993); // In this type the prototype will be Employee as well as programmer
 // console.log(Obj);
-// console.log(Programmer.multiply(2,3));
+// console.log(Programmer.multiply(2,3)); // We accessed the function but not showing in the prototype
 // console.log(Programmer.add(2,3));
 
 
@@ -565,7 +571,7 @@
 // let data=[
 //     {name:"Sam",Subject:"Java"},
 //     {name:"Jogy",Subject:"Python"}
-// ];
+// ];  // two objects in an array
 // console.log(data);
 
 
@@ -594,8 +600,8 @@
 //     }, 2000);
 
 // }
+// enrollStudent(data1,popList); // The Call back function is popList
 
-// enrollStudent(data1,popList);
 
 
 // ------------******** Promises ********-----------------------------
@@ -604,7 +610,7 @@
 //     return new Promise(function(resolve,reject){
 //         setTimeout(() => {
 //             let error=false;
-//             if(!error){
+//             if(error){
 //                 console.log("Resolve Called");
 //                 resolve("Reslove mssg");
 //             }
@@ -612,7 +618,7 @@
 //                 console.log("reject Called");
 //                 reject("You can give mssg here");
 //             }
-//         }, 2000);
+//         }, 1000);
 
 //     })
 // }
@@ -695,7 +701,7 @@
 //     })
 // }
 
-// //for getting the api 
+//for getting the api 
 // function getData(){
 //      url="https://api.github.com/users";
 //     fetch(url).then((response)=>{
@@ -777,15 +783,15 @@
 
 
 // let reg=/sam/;  // Regular expression literal 
-// let reg=/sam/g;  // g means global which is a flag
-//  let  reg=/sam/i;  // Case insensitive
-// let regex=/sam/gi; // I can declare both icaseInsensitive or global
+// // let reg=/sam/g;  // g means global which is a flag
+// //  let  reg=/sam/i;  // Case insensitive
+// // let regex=/sam/gi; // I can declare both icaseInsensitive or global
 // console.log(reg);
 // console.log(reg.source);
 
 // let s="Hello sam how u doing me too sam";
 
-// Some of its Function
+// // Some of its Function
 
 // // exec()-gives the index of the reg starts after repeating it will again show the next place of reg & return the index
 // let result=reg.exec(s);
@@ -797,19 +803,19 @@
 
 // // test() gives us true or false
 // result=reg.test(s);
-// console.log(result);
+// // console.log(result);
 
 // //match() return an array
 // result=s.match(reg);
-// console.log(result);
+// // console.log(result);
 
 // //search() returns the index of first match
 // result=s.search(reg);
-// console.log(result);
+// // console.log(result);
 
 // // replace() replaces the reg to the following strings
-// let result=s.replace(reg,"Harry");        //It repaces the regex element that is present in string with the new given String
-// console.log(result); 
+// let result2=s.replace(reg,"Harry");        //It repaces the regex element that is present in string with the new given String
+// // console.log(result2); 
 
 // -----------********* Meatcharacters in regular expression *********--------------------
 
@@ -937,7 +943,7 @@
 //     // yield 4;
 //     while(i){
 //         // yield i++;
-            // yield[i++] // gives data in form of array
+//             yield[i++] // gives data in form of array
 //         yield (i++).toString(); // Print the value in String
 //     }
 // }
@@ -953,9 +959,9 @@
 // -----------************ For_In & For_of_Loops **********--------------------
 
 // let people=["sam","harry","jogy","birju","dee"];
-// // console.log(people);
+// console.log(people);
 
-// // by Tradiotional for loop
+// by Tradiotional for loop
 
 // for (let index = 0; index < people.length; index++) {
 //     const element = people[index];
@@ -970,9 +976,9 @@
 // }
 
 // //By traditional for loop
-// for (let index = 0; index < Object.keys(myObj).length; index++) {
-//     const element = myObj[Object.keys(myObj)[index]];;
-//     // console.log(element)
+// for (let index = 0; index < Object.keys(myObj).length; index++) {  // Object.keys() returns an array of keys present in that object
+//     const element = myObj[Object.keys(myObj)[index]];
+//     console.log(element)
     
 // }
 
@@ -983,10 +989,10 @@
 
 // let myString="Hello i'm sam How U doing";
 // for(let key in myString){
-//     console.log(myString[key]);
+//     // console.log(myString[key]);
 // }
 
-// // ********** For of Loop *************
+// ********** For of Loop *************
 
 // for(let key of myString){
 //     console.log(key);
@@ -998,6 +1004,7 @@
 // for(let name in people){  // Basically For in loop iterate in Index
 //     console.log(name);
 // }
+// console.log(people);
 
 
 // QUIZ
@@ -1017,13 +1024,13 @@
 // myMap.set(key2,"This is key2");
 // myMap.set(key3,"This is key3");
 
-// // console.log(myMap);
+// console.log(myMap);
 // console.log(myMap.size); // gives the size;
 // let myValue=myMap.get(key3);
-// // console.log(myValue);
+// console.log(myValue);
 
 // for(let [key,value] of myMap){
-//     // console.log(key,value);
+//     console.log(key,value);
 // }
 
 // myMap.forEach((value,key) => {
@@ -1075,7 +1082,7 @@
 
 // ------------********** Symbols ***********--------------
 
-// // let sym=Symbol();  // Symbol is a primitive like int ,char,unefined etc. which is use for represent a uniqe value
+// let sym=Symbol();  // Symbol is a primitive like int ,char,unefined etc. which is use for represent a uniqe value
 // let sym=Symbol("Identifer"); // we can put an identifier in it 
 // let sym2=Symbol("Identifier");
 // console.log(sym);
@@ -1089,7 +1096,7 @@
 // const k2=Symbol();
 
 // let myObj={Name:'Kalka Nath'};
-// myObj[k1]="Harry";
+// myObj[k1]="Harry"; // It setting the key as Symbol
 // myObj[k2]="Sam";
 // console.log(myObj);
 
@@ -1103,6 +1110,7 @@
 // }
 
 // -------------******* Destructuring *************----------------------
+
 
 // let [a,b,c]=[1,2,3];
 // console.log(a,b,c);
